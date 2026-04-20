@@ -1,4 +1,6 @@
-const API_BASE_URL = 'http://localhost:5000/api/auth';
+const API_BASE_URL = import.meta.env.MODE === 'production' 
+  ? '/api/auth' 
+  : 'http://localhost:5000/api/auth';
 
 const register = async (userData) => {
   try {
